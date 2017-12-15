@@ -1,0 +1,19 @@
+{
+    "name": "derweili/google-photos",
+    "authors": [
+        {
+            "name": "derweili",
+            "email": "jw@derweili.de"
+        }
+    ],
+    "description": "Provider to use Google Photos API",
+    "license": "MIT",
+    "autoload": {
+     "psr-4": {
+       "Derweili\\GooglePhotos\\": "src/"
+     }
+   },
+    "require": {
+        "league/oauth2-google": "^2.0"
+    }
+}
