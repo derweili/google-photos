@@ -29,8 +29,33 @@ class GooglePhotos extends Google
   }
 
 
-  function getUsersAlbums( $token ){
+  function getUsersAlbums( $token = null ){
+
+    $token = $token ? $token : $this->token;
+
     $this->->getAuthenticatedRequest( 'GET', 'https://picasaweb.google.com/data/feed/api/user/default', $token );
   }
+
+
+
+  // xml parse response
+  private function parsePhotoResponse( $response ){
+
+    // get body as string from response
+    $content = (string) $response->getBody();
+
+    // build an object from xml
+    $xml_object = new SimpleXMLElement($content);
+
+    return $xml_object;
+
+  }
+
+
+
+  function get_users_album_list( $token = null,  $user = 'default'){
+
+  }
+
 
 }
